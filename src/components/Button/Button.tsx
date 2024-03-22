@@ -1,13 +1,28 @@
 import React from 'react';
 import { styled } from 'styled-components';
 
-const StyledButton = styled.button`
+const StyledButton = styled.button<ButtonProps>`
 cursor: pointer;
 border: 0;
 padding: 8px 14px;
 transition: 0.3s;
+${({theme, variant}) => {
+  console.log(theme );
+
+  return{
+    backgroundColor: theme.colors[variant].main,
+    color: theme.colors[variant].text,
+    ':hover':{
+      backgroundColor: theme.colors[variant].ligth,
+    },
+    ':focus':{
+      backgroundColor: theme.colors[variant].dark,
+    }
+  }
+}}
 `
 interface ButtonProps {
+  variant?: 'primary' | 'accent';
   disabled?: boolean;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
   children: React.ReactNode;
@@ -23,5 +38,6 @@ export default function Button({ children, ...props }: ButtonProps) {
 }
 
 Button.defaultProps = {
+  variant: 'primary',
   disabled: false,
 }
