@@ -1,4 +1,5 @@
-import ThemeProvider from "../src/theme/ThemeProvider"
+import ThemeProvider from '../src/theme/ThemeProvider';
+
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
@@ -14,6 +15,5 @@ export const decorators = [
     <ThemeProvider>
       <Story />
     </ThemeProvider>
-
   )
-]
+];

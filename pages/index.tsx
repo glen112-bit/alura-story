@@ -6,7 +6,7 @@ export default function HomeScreen() {
     <ThemeProvider>
       <div>
         <h1>Home Page!</h1>
-        <Button variant='primary'>
+        <Button variant='accent'>
           Botão simplão
         </Button>
       </div>
